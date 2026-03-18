@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;OriginalPrice&quot;:&quot;1000&quot;,&quot;DiscountPercent&quot;:&quot;10&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegProcdSignatureAvl>false</isIntegProcdSignatureAvl>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>English</language>
+    <name>pwcIPCalculateDiscount</name>
+    <omniProcessElements>
+        <description>Remote Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CallDiscountApex</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;remoteOptions&quot; : {
+    &quot;OriginalPrice&quot; : &quot;%OriginalPrice%&quot;,
+    &quot;DiscountPercent&quot; : &quot;%DiscountPercent%&quot;
+  },
+  &quot;remoteMethod&quot; : &quot;calculateDiscount&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;elementValueMap&quot; : { },
+  &quot;failOnStepError&quot; : false,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;DiscountCalculator&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;restOptions&quot; : { },
+  &quot;sendJSONNode&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Chatter Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Chatter</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <sequenceNumber>11.0</sequenceNumber>
+        <type>Chatter Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <description>Set Values Action</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>0.0</level>
+            <name>SetValues1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;elementValueMap&quot; : { },
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <description>Conditional Block</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ConditionalBlock</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : { },
+  &quot;id&quot; : &quot;&quot;,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;restOptions&quot; : { },
+  &quot;isIfElseBlock&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>12.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Decision Matrix Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DecisionMatrix</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;DecisionMatrix&quot;,
+  &quot;matrix Input Parameters&quot; : [ ],
+  &quot;remoteOptions&quot; : {
+    &quot;matrixName&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;defaultMatrixResult&quot; : { },
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>14.0</sequenceNumber>
+        <type>Matrix Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Delete Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Delete</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;elementValueMap&quot; : { },
+  &quot;failOnStepError&quot; : false,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;deleteSObject&quot; : [ {
+    &quot;rowId&quot; : 1,
+    &quot;AllOrNone&quot; : false,
+    &quot;Type&quot; : &quot;%Account:accId%&quot;,
+    &quot;Id&quot; : &quot;&quot;
+  } ],
+  &quot;id&quot; : &quot;&quot;,
+  &quot;restOptions&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Delete Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Docusign Envelope Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DocusignEnvelope</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;DocusignEnvelope&quot;,
+  &quot;docuSignTemplatesGroup&quot; : [ ],
+  &quot;emailSubject&quot; : &quot;&quot;,
+  &quot;emailBody&quot; : &quot;&quot;,
+  &quot;dateFormat&quot; : &quot;&quot;,
+  &quot;dateTimeFormat&quot; : &quot;&quot;,
+  &quot;timeFormat&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>DocuSign Envelope Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Email Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Email</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;emailInformation&quot; : {
+    &quot;toAddressList&quot; : [ ],
+    &quot;ccAddressList&quot; : [ ],
+    &quot;bccAddressList&quot; : [ ],
+    &quot;emailSubject&quot; : &quot;&quot;,
+    &quot;emailBody&quot; : &quot;&quot;,
+    &quot;setHtmlBody&quot; : false
+  },
+  &quot;emailTemplateInformation&quot; : {
+    &quot;emailTemplateName&quot; : &quot;&quot;,
+    &quot;emailTargetObjectId&quot; : &quot;&quot;,
+    &quot;saveAsActivity&quot; : false,
+    &quot;whatId&quot; : &quot;&quot;
+  },
+  &quot;elementValueMap&quot; : { },
+  &quot;failOnStepError&quot; : false,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;contentVersionList&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;staticDocList&quot; : [ ],
+  &quot;OrgWideEmailAddress&quot; : &quot;&quot;,
+  &quot;attachmentList&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;useTemplate&quot; : false,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;restOptions&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Email Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Expression Set Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ExpressionSet</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;inputData&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;remoteOptions&quot; : [ ],
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;elementValueMap&quot; : { },
+  &quot;failOnStepError&quot; : false,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;restOptions&quot; : { },
+  &quot;sendJSONNode&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Calculation Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Http Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>HTTP</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;HTTP&quot;,
+  &quot;restPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;xmlPreTransformBundle&quot; : &quot;&quot;,
+  &quot;xmlPostTransformBundle&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;show&quot; : null,
+  &quot;type&quot; : &quot;Apex&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;restOptions&quot; : {
+    &quot;headers&quot; : { },
+    &quot;params&quot; : { },
+    &quot;cache&quot; : false,
+    &quot;timeout&quot; : 0,
+    &quot;withCredentials&quot; : false,
+    &quot;sendBody&quot; : true,
+    &quot;URIEncode&quot; : false
+  },
+  &quot;namedCredential&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Rest Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Integration Procedure Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>IntegrationProcedure</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;remoteOptions&quot; : { },
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;elementValueMap&quot; : { },
+  &quot;failOnStepError&quot; : false,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;disableChainable&quot; : false,
+  &quot;chainOnStep&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;integrationProcedureKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;useFormulas&quot; : false,
+  &quot;restOptions&quot; : { },
+  &quot;sendJSONNode&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>List Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>List</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;elementValueMap&quot; : { },
+  &quot;failOnStepError&quot; : false,
+  &quot;preventIntraListMerge&quot; : false,
+  &quot;isActive&quot; : true,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;filterListFormula&quot; : &quot;&quot;,
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;advancedMerge&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;hasPrimary&quot; : false,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;allowMergeNulls&quot; : false,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;restOptions&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <description>Set Values Action</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>0.0</level>
+            <name>SetValues2</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;Name&quot; : &quot;=CONCAT(%fname%,%lname%)&quot;
+  },
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : false,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;restOptions&quot; : { },
+  &quot;chainOnStep&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <description>Loop Block</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>LoopBlock</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;elementValueMap&quot; : { },
+  &quot;loopList&quot; : &quot;Names&quot;,
+  &quot;failOnStepError&quot; : false,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;restOptions&quot; : { },
+  &quot;loopOutput&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>13.0</sequenceNumber>
+        <type>Loop Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Response Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Response</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;elementValueMap&quot; : { },
+  &quot;failOnStepError&quot; : false,
+  &quot;responseFormat&quot; : &quot;&quot;,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalOutput&quot; : {
+    &quot;Final Price&quot; : &quot;%CallDiscountApex:FinalPrice%&quot;,
+    &quot;name&quot; : &quot;huron&quot;,
+    &quot;Discount Amount&quot; : &quot;%CallDiscountApex:DiscountAmount%&quot;
+  },
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;restOptions&quot; : { },
+  &quot;sendJSONNode&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Set Values Action</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;name&quot; : &quot;chetali&quot;,
+    &quot;employee&quot; : {
+      &quot;EmpName&quot; : &quot;chetali&quot;,
+      &quot;Dept&quot; : &quot;Salesforce&quot;,
+      &quot;age&quot; : 20
+    }
+  },
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : false,
+  &quot;id&quot; : &quot;&quot;,
+  &quot;internalNotes&quot; : &quot;&quot;,
+  &quot;isActive&quot; : true,
+  &quot;restOptions&quot; : { },
+  &quot;chainOnStep&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessKey>practice_testing</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;trackingCustomData&quot; : { },
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;description&quot; : &quot;&quot;,
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;rollbackOnError&quot; : false,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null
+}</propertySetConfig>
+    <subType>testing</subType>
+    <type>practice</type>
+    <uniqueName>practice_testing_English_2</uniqueName>
+    <versionNumber>2.0</versionNumber>
+</OmniIntegrationProcedure>

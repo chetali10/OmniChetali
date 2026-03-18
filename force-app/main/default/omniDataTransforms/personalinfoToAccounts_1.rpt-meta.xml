@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;omniscriptId&quot; : &quot;0jNf6000000OiBBEA0&quot;,
+  &quot;language&quot; : &quot;English&quot;,
+  &quot;type&quot; : &quot;omnivalue&quot;,
+  &quot;subType&quot; : &quot;testing&quot;,
+  &quot;sId&quot; : &quot;0jNf6000000OiBBEA0&quot;,
+  &quot;runMode&quot; : &quot;preview&quot;,
+  &quot;theme&quot; : &quot;lightning&quot;,
+  &quot;LanguageCode&quot; : &quot;en_US&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;timeStamp&quot; : &quot;2026-02-20T12:19:35.140Z&quot;,
+  &quot;userTimeZoneName&quot; : &quot;Asia/Kolkata&quot;,
+  &quot;userTimeZone&quot; : &quot;330&quot;,
+  &quot;userCurrencyCode&quot; : &quot;INR&quot;,
+  &quot;userName&quot; : &quot;chchauhan-rraa@force.com&quot;,
+  &quot;userId&quot; : &quot;005f6000003t9FRAAY&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNf6000000OiBBEA0&quot;,
+  &quot;localTimeZoneName&quot; : &quot;Asia/Calcutta&quot;,
+  &quot;personalinfo&quot; : {
+    &quot;Checkbox1&quot; : false,
+    &quot;FirstName&quot; : &quot;Birla&quot;,
+    &quot;OppName&quot; : &quot;birla1&quot;,
+    &quot;StageName&quot; : &quot;prospecting&quot;,
+    &quot;CloseDate&quot; : &quot;2026-02-21&quot;
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>true</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>personalinfoToAccounts</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>23835dc1-706e-4a0b-9a41-09ddf02dd8a4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>personalinfoToAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c25078c4-94fc-4091-9bbe-736e983e756e</globalKey>
+        <inputFieldName>personalinfo:CloseDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>personalinfoToAccounts</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>CloseDate</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f456bb45-7992-41a0-80ec-93dc5a55f22c</globalKey>
+        <inputFieldName>personalinfo:FirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>personalinfoToAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6a1a6ef5-2f9e-4564-9afc-f1122f2551a6</globalKey>
+        <inputFieldName>personalinfo:StageName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>personalinfoToAccounts</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>StageName</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>fcd26430-302e-4fe8-83ec-ac80318f9f2d</globalKey>
+        <inputFieldName>DRId_Account</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>personalinfoToAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>c4c7330c-0418-47a9-b4da-1e7041db49d3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>personalinfoToAccounts</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>86621b72-88f5-4fb8-97b5-3bb1320a8e8f</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>personalinfoToAccounts</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e78def2c-bef8-4114-81d7-6d0c1308a22a</globalKey>
+        <inputFieldName>personalinfo:OppName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>personalinfoToAccounts</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;omniscriptId&quot; : &quot;0jNf6000000OiBBEA0&quot;,
+  &quot;language&quot; : &quot;English&quot;,
+  &quot;type&quot; : &quot;omnivalue&quot;,
+  &quot;subType&quot; : &quot;testing&quot;,
+  &quot;sId&quot; : &quot;0jNf6000000OiBBEA0&quot;,
+  &quot;runMode&quot; : &quot;preview&quot;,
+  &quot;theme&quot; : &quot;lightning&quot;,
+  &quot;LanguageCode&quot; : &quot;en_US&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;timeStamp&quot; : &quot;2026-02-20T12:19:35.140Z&quot;,
+  &quot;userTimeZoneName&quot; : &quot;Asia/Kolkata&quot;,
+  &quot;userTimeZone&quot; : &quot;330&quot;,
+  &quot;userCurrencyCode&quot; : &quot;INR&quot;,
+  &quot;userName&quot; : &quot;chchauhan-rraa@force.com&quot;,
+  &quot;userId&quot; : &quot;005f6000003t9FRAAY&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNf6000000OiBBEA0&quot;,
+  &quot;localTimeZoneName&quot; : &quot;Asia/Calcutta&quot;,
+  &quot;personalinfo&quot; : {
+    &quot;Checkbox1&quot; : false,
+    &quot;FirstName&quot; : &quot;Birla&quot;,
+    &quot;OppName&quot; : &quot;birla1&quot;,
+    &quot;StageName&quot; : &quot;prospecting&quot;,
+    &quot;CloseDate&quot; : &quot;2026-02-21&quot;
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>personalinfoToAccounts_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountName&quot; : &quot;Test5&quot;,
+  &quot;Account&quot; : [ {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Medical&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;
+  }, {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Medical&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;
+  }, {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Dental&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;
+  } ]
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;Account&quot; : [ {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Medical&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;,
+    &quot;AccountName&quot; : &quot;Test5&quot;
+  }, {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Medical&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;,
+    &quot;AccountName&quot; : &quot;Test5&quot;
+  }, {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Dental&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;,
+    &quot;AccountName&quot; : &quot;Test5&quot;
+  } ]
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>true</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DataMapperTransformPWCDocGen</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| TODAY</formulaConverted>
+        <formulaExpression>TODAY()</formulaExpression>
+        <formulaResultPath>TodayDate</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>ed7662b3-cca8-452b-aea3-cc8fa4fdbdd6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataMapperTransformPWCDocGen</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dbcf164b-ff9a-4a1a-b8d6-721e63121a6a</globalKey>
+        <inputFieldName>AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataMapperTransformPWCDocGen</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>218bce58-86e3-4e9f-b022-1b5c5e135655</globalKey>
+        <inputFieldName>Account:OpportunityName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataMapperTransformPWCDocGen</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Repeat1:OpportunityName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>041a9f6a-525d-40cc-ac49-9c81a538870f</globalKey>
+        <inputFieldName>TodayDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataMapperTransformPWCDocGen</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Date(dd MMMM, yyyy)</outputFieldFormat>
+        <outputFieldName>TodayDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3fd282a5-99d9-4d0e-a0ce-8ca53da1b4bc</globalKey>
+        <inputFieldName>Account:OppStageName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataMapperTransformPWCDocGen</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Repeat1:OppStageName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5d4a2555-9d5c-46a2-b305-d966e31658b9</globalKey>
+        <inputFieldName>Account:OppCloseDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataMapperTransformPWCDocGen</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Repeat1:OppCloseDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountName&quot; : &quot;Test5&quot;,
+  &quot;Account&quot; : [ {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Medical&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;
+  }, {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Medical&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;
+  }, {
+    &quot;OpportunityName&quot; : &quot;Test5-3-11-2026-Dental&quot;,
+    &quot;OppStageName&quot; : &quot;Prospecting&quot;,
+    &quot;OppCloseDate&quot; : &quot;2026-03-11&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <targetOutputFileName>DocGenTemplate(Version 1)</targetOutputFileName>
+    <type>Transform</type>
+    <uniqueName>DataMapperTransformPWCDocGen_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

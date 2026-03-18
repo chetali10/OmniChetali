@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;BusinessInformation&quot; : {
+    &quot;EligibleEmployees&quot; : null,
+    &quot;LegalBusinessName&quot; : null,
+    &quot;InsuranceType&quot; : null,
+    &quot;NumberOfEmployees&quot; : null,
+    &quot;EffectiveDate&quot; : null
+  },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;BusinessInformation&quot; : null,
+    &quot;Step1&quot; : null,
+    &quot;SetValues1&quot; : null,
+    &quot;PostBusinessInformation&quot; : null,
+    &quot;SetErrors1&quot; : null,
+    &quot;DataMapperExtractAction1&quot; : null,
+    &quot;DataMapperPostAction1&quot; : null
+  },
+  &quot;Step1&quot; : { },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;SetErrors1&quot; : { },
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;SetValues1&quot; : { },
+  &quot;ContextId&quot; : null,
+  &quot;PostBusinessInformation&quot; : { },
+  &quot;DataMapperExtractAction1&quot; : { },
+  &quot;DataMapperPostAction1&quot; : { }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>true</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DataLoadUniqueOppFrmAcc</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7cb65892-5ca0-4ae7-b37c-c46b56172e44</globalKey>
+        <inputFieldName>BusinessInformation:EffectiveDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Effective_Date__c</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Prospecting</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1a350a07-d9a0-42b2-ba3a-37c8537eac41</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StageName</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8bc76af7-321a-4df6-83b3-f70a1bb5f7ad</globalKey>
+        <inputFieldName>DRId_Account</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| TODAY</formulaConverted>
+        <formulaExpression>TODAY()</formulaExpression>
+        <formulaResultPath>CloseDate</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>e353324f-11e9-4d9f-b2ef-11e1e6dd3efb</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BusinessInformation:LegalBusinessName | TODAY var:BusinessInformation:InsuranceType CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(BusinessInformation:LegalBusinessName,TODAY(),BusinessInformation:InsuranceType)</formulaExpression>
+        <formulaResultPath>OppName</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>dacbd384-7f6c-481a-8e20-49e943db7ada</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>5961b672-785f-4139-a753-2ac02bd8154a</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>54fb7877-522b-4863-ad2c-98e7fa626dd2</globalKey>
+        <inputFieldName>BusinessInformation:InsuranceType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Insurance_Type__c</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3dab3dbd-0a96-491c-baea-bda9f4e38efb</globalKey>
+        <inputFieldName>OppName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e1e61b63-e4a4-4611-a401-83602dba39d5</globalKey>
+        <inputFieldName>CloseDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DataLoadUniqueOppFrmAcc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CloseDate</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DataLoadUniqueOppFrmAcc_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>
